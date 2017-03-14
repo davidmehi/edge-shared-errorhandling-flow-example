@@ -1,5 +1,4 @@
 # edge-shared-errorhandling-flow-example
-
 Details how to use shared flows for establishing a common error handling routine for all proxies.
 
 **Shared Flow**
