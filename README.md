@@ -5,6 +5,7 @@ Details how to use shared flows for establishing a common error handling routine
 1. Zip the "sharedflowbundle" folder
 2. Upload as a Shared Flow (APIs-->Shared Flows)
 3. Deploy to environment needed
+4. Customize to add additional error codes, error handling, logging, etc
 
 **Example Proxy**
 1. Zip the "apiproxy"
@@ -17,8 +18,6 @@ Details how to use shared flows for establishing a common error handling routine
 
 **Proxy Template With Shared Flow Reference**
 1. This is the proxy template (referenced here: <https://github.com/davidmehi/edge-proxy-template>) that now uses the shared flow for common error handling.
-
-*Customize the Shared Flow to include additional error codes and error handling capabilities.*
 
 *To use the Shared Flow in a proxy:*
 1. Add the shared flow "SharedFlow_FaultRulesHanding" using the Shared Flow policy to the proxy.
