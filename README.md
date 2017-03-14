@@ -21,7 +21,7 @@ Details how to use shared flows for establishing a common error handling routine
 
 *To use the Shared Flow in a proxy:*
 1. Add the shared flow "SharedFlow_FaultRulesHanding" using the Shared Flow policy to the proxy.
-2. Add the policy to the &lt;FaultRules&rt; and the &lt;DefaultFaultRule&rt; in the default.xml of the proxy.  In both cases, the shared flow will be called, which contains the common error handling logic.
+2. Add the policy to the &lt;FaultRules&gt; and the &lt;DefaultFaultRule&gt; in the default.xml of the proxy.  In both cases, the shared flow will be called, which contains the common error handling logic.
 
 ```xml
     <FaultRules>
