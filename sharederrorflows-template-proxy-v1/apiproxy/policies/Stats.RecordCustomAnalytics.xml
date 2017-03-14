@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector async="false" continueOnError="false" enabled="true" name="Stats.RecordCustomAnalytics">
+    <!-- Created by the Custom Analytics Collection tool on: Thu Aug 04 2016 14:11:39 GMT+0100 (BST) -->
+    <DisplayName>Stats.RecordCustomAnalytics</DisplayName>
+    <Statistics>
+        <Statistic name="dimensionName" ref="_dimensionVariable" type="String"/>
+    </Statistics>
+</StatisticsCollector>

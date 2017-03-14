@@ -1,0 +1,55 @@
+{
+	"variables": [],
+	"info": {
+		"name": "errorhandlingexample-sharedflow-proxy-v1",
+		"_postman_id": "228727e2-f6c8-9c08-1e3a-92abd7dba8d4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success Call",
+			"request": {
+				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "401 Error",
+			"request": {
+				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy/401error",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "429 Error",
+			"request": {
+				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy/429error",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Need to send multiple times to see error"
+			},
+			"response": []
+		},
+		{
+			"name": "500 Error",
+			"request": {
+				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy/500error",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

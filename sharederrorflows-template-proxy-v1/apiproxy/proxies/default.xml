@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>SpikeArrest.SpikeArrest</Name>
+            </Step>
+            <Step>
+                <Name>VerifyAPIKey.VerifyAPIKey</Name>
+            </Step>
+            <Step>
+                <Name>OAuthV2.VerifyAccessToken</Name>
+            </Step>
+            <Step>
+                <Name>Quota.EnforceQuota</Name>
+            </Step>
+            <Step>
+                <Name>ExtractVariables.CommonRequestHeaders</Name>
+            </Step>
+            <Step>
+                <Name>ExtractVariables.ExtractCustomAnalyticVariables</Name>
+            </Step>
+            <Step>
+                <Name>KeyValueMap.GetConfigSettings</Name>
+            </Step>
+            <Step>
+                <Name>Stats.RecordCustomAnalytics</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request>
+            <Step>
+                <Name>Javascript.DisplayTraceRequestVariables</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Name>Javascript.DisplayTraceResponseVariables</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <FaultRules>
+        <FaultRule name="Shared Fault Rules">
+            <Step>
+                <Name>FlowCalloutFaultRulesHandling</Name>
+            </Step>
+        </FaultRule>
+        <!-- could put additional fault rules here if needed -->
+    </FaultRules>
+    <DefaultFaultRule name="all">
+        <AlwaysEnforce>true</AlwaysEnforce>
+        <Step>
+            <Name>FlowCalloutFaultRulesHandling</Name>
+        </Step>
+    </DefaultFaultRule>
+    <Flows>
+        <Flow name="getResource">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Javascript.ValidateRequestParameters</Name>
+                </Step>
+                <Step>
+                    <Name>AssignMessage.SetGetResourceTargetPath</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/resource_path&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="postResource">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Javascript.ValidateRequestParameters</Name>
+                </Step>
+                <Step>
+                    <Name>ThreatProtection.JSONThreatProtection</Name>
+                </Step>
+                <Step>
+                    <Name>AssignMessage.SetPostResourceTargetPath</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/resource_path&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="CatchAll">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AssignMessage.Set404ErrorVariables</Name>
+                </Step>
+                <Step>
+                    <Name>RaiseFault.RaiseEmptyFault</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/**&quot;)</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/put_proxy_path_here</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="ExtractVariables.ExtractCustomAnalyticVariables">
+    <DisplayName>ExtractVariables.ExtractCustomAnalyticVariables</DisplayName>
+    <QueryParam name="dimensionName">
+        <Pattern ignoreCase="true">{_dimensionVariable}</Pattern>
+    </QueryParam>
+</ExtractVariables>

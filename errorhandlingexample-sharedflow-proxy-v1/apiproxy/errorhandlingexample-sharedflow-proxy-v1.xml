@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="errorhandlingexample-sharedflow-proxy-v1">
+    <Basepaths>/example-shared-proxy</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1489513036270</CreatedAt>
+    <CreatedBy></CreatedBy>
+    <Description></Description>
+    <DisplayName>Example-Shared-Proxy</DisplayName>
+    <LastModifiedAt>1489513056707</LastModifiedAt>
+    <LastModifiedBy></LastModifiedBy>
+    <Policies>
+        <Policy>AssignMessageSetResponse</Policy>
+        <Policy>FlowCalloutFaultRulesHandling</Policy>
+        <Policy>JavaScriptDebug</Policy>
+        <Policy>SpikeArrest</Policy>
+        <Policy>VerifyAPIKey</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JavaScript.Debug.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>

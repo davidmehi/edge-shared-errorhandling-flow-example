@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KeyValueMap.GetConfigSettings" mapIdentifier="API_CONFIG_KVM">
+    <DisplayName>KeyValueMap.GetConfigSettings</DisplayName>
+    <Properties/>
+    <ExpiryTimeInSecs>-1</ExpiryTimeInSecs>
+    <Get assignTo="flow.kvm.kvmValue">
+        <Key>
+            <Parameter>kvmKey</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
