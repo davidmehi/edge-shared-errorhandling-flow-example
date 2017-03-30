@@ -10,7 +10,7 @@
 		{
 			"name": "Success Call",
 			"request": {
-				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy",
+				"url": "https://*******-test.apigee.net/example-shared-proxy",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -21,7 +21,7 @@
 		{
 			"name": "401 Error",
 			"request": {
-				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy/401error",
+				"url": "https://*******-test.apigee.net/example-shared-proxy/401error",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -32,7 +32,7 @@
 		{
 			"name": "429 Error",
 			"request": {
-				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy/429error",
+				"url": "https://*******-test.apigee.net/example-shared-proxy/429error",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -43,7 +43,7 @@
 		{
 			"name": "500 Error",
 			"request": {
-				"url": "https://dmehidevtraining-test.apigee.net/example-shared-proxy/500error",
+				"url": "https://*******-test.apigee.net/example-shared-proxy/500error",
 				"method": "GET",
 				"header": [],
 				"body": {},
