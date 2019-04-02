@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="1" name="SharedFlow_SharedSecurityCheck">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1554221369985</CreatedAt>
+    <CreatedBy>davidmehi@google.com</CreatedBy>
+    <Description>Shared flow that will throw a 401 Fault due to invalid API key</Description>
+    <DisplayName>SharedFlow_401Fault</DisplayName>
+    <LastModifiedAt>1554221369985</LastModifiedAt>
+    <LastModifiedBy>davidmehi@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:75bf07b17f74ba2225799c701c87280aa80959c9dd79eb74f413bc86369051208a107e9e114d63cd249dc78495d28bf7d56787d16d11f6f615fbb30ab398e5da</ManifestVersion>
+    <Policies>
+        <Policy>VerifyAPIKey-SharedVerifyKey</Policy>
+    </Policies>
+    <Resources/>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

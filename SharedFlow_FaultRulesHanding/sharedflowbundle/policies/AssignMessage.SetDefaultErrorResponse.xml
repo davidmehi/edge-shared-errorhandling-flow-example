@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignMessage.SetDefaultErrorResponse">
+    <DisplayName>AssignMessage.SetDefaultErrorResponse</DisplayName>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">application/json</Header>
+        </Headers>
+        <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">{
+    "errorResponse": {
+        "code": "@flow.error.code#",
+        "message": "@flow.error.message#",
+        "info": "@flow.error.info#"
+    }
+}</Payload>
+        <StatusCode>{flow.error.status}</StatusCode>
+        <ReasonPhrase>{flow.error.reason}</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
