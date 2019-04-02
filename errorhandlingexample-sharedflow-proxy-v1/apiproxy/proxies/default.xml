@@ -2,12 +2,7 @@
 <ProxyEndpoint name="default">
     <Description/>
     <FaultRules>
-        <FaultRule name="Shared Fault Rules">
-            <Step>
-                <Name>FlowCalloutFaultRulesHandling</Name>
-            </Step>
-        </FaultRule>
-        <!-- could put additional fault rules here if needed -->
+        <!-- could put additional fault rules here if needed for local proxy -->
     </FaultRules>
     <DefaultFaultRule name="all">
         <AlwaysEnforce>true</AlwaysEnforce>
@@ -17,11 +12,7 @@
     </DefaultFaultRule>
     <PreFlow name="PreFlow">
         <Request/>
-        <Response>
-            <Step>
-                <Name>AssignMessageSetResponse</Name>
-            </Step>
-        </Response>
+        <Response/>
     </PreFlow>
     <PostFlow name="PostFlow">
         <Request/>
@@ -32,11 +23,11 @@
             <Description/>
             <Request>
                 <Step>
-                    <Name>VerifyAPIKey</Name>
+                    <Name>FlowCalloutSharedSecurityCheck</Name>
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath &quot;/401error&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/401error") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="get429Error">
             <Description/>
@@ -45,8 +36,12 @@
                     <Name>SpikeArrest</Name>
                 </Step>
             </Request>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath &quot;/429error&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+            <Response>
+                <Step>
+                    <Name>AssignMessageSetResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/429error") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="get500Error">
             <Description/>
@@ -56,7 +51,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath &quot;/500error&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/500error") and (request.verb = "GET")</Condition>
         </Flow>
     </Flows>
     <HTTPProxyConnection>
@@ -65,5 +60,10 @@
         <VirtualHost>secure</VirtualHost>
         <VirtualHost>default</VirtualHost>
     </HTTPProxyConnection>
-    <RouteRule name="noroute"/>
+    <RouteRule name="none">
+        <Condition>(proxy.pathsuffix MatchesPath "/429error") and (request.verb = "GET")</Condition>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>TargetEndpoint-1</TargetEndpoint>
+    </RouteRule>
 </ProxyEndpoint>

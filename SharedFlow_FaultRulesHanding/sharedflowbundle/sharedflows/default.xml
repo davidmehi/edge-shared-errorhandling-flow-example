@@ -6,57 +6,58 @@
     <Step>
         <Name>AssignMessage.Set400ErrorVariables</Name>
         <Condition>
-                    (fault.name = &quot;ExceededContainerDepth&quot;) or 
-                    (fault.name = &quot;ExceededObjectEntryCount&quot;) or 
-                    (fault.name = &quot;ExceededArrayElementCount&quot;) or 
-                    (fault.name = &quot;ExceededObjectEntryNameLength&quot;) or 
-                    (fault.name = &quot;ExceededStringValueLength&quot;) or 
-                    (fault.name = &quot;SourceUnavailable&quot;) or 
-                    (fault.name = &quot;NonMessageVariable&quot;) or 
-                    (fault.name = &quot;ExecutionFailed&quot;)
+                    (fault.name = "ExceededContainerDepth") or 
+                    (fault.name = "ExceededObjectEntryCount") or 
+                    (fault.name = "ExceededArrayElementCount") or 
+                    (fault.name = "ExceededObjectEntryNameLength") or 
+                    (fault.name = "ExceededStringValueLength") or 
+                    (fault.name = "SourceUnavailable") or 
+                    (fault.name = "NonMessageVariable") or 
+                    (fault.name = "ExecutionFailed")
                 </Condition>
     </Step>
     <Step>
         <Name>AssignMessage.Set401ErrorVariables</Name>
         <Condition>
-                (fault.name = &quot;ApiKeyNotApproved&quot;) or 
-                (fault.name = &quot;CompanyStatusNotActive&quot;) or 
-                (fault.name = &quot;DeveloperStatusNotActive&quot;) or 
-                (fault.name = &quot;FailedToResolveAPIKey&quot;) or 
-                (fault.name = &quot;InvalidApiKey&quot;) or  
-                (fault.name = &quot;InvalidApiKeyForGivenResource&quot;) or 
-                (fault.name = &quot;app_not_approved&quot;)
+                (oauthV2.VerifyAPIKey-SharedVerifyKey.failed = true) or 
+                (fault.name = "ApiKeyNotApproved") or 
+                (fault.name = "CompanyStatusNotActive") or 
+                (fault.name = "DeveloperStatusNotActive") or 
+                (fault.name = "FailedToResolveAPIKey") or 
+                (fault.name = "InvalidApiKey") or  
+                (fault.name = "InvalidApiKeyForGivenResource") or 
+                (fault.name = "app_not_approved")
                 </Condition>
     </Step>
     <Step>
         <Name>AssignMessage.Set401ErrorVariables</Name>
         <Condition>
-                    (fault.name = &quot;FailedToResolveAccessToken&quot;) or 
-                    (fault.name = &quot;FailedToResolveToken&quot;) or 
-                    (fault.name = &quot;FailedToResolveAuthorizationCode&quot;) or 
-                    (fault.name = &quot;InsufficientScope&quot;) or 
-                    (fault.name = &quot;InvalidOperation&quot;)
+                    (fault.name = "FailedToResolveAccessToken") or 
+                    (fault.name = "FailedToResolveToken") or 
+                    (fault.name = "FailedToResolveAuthorizationCode") or 
+                    (fault.name = "InsufficientScope") or 
+                    (fault.name = "InvalidOperation")
                 </Condition>
     </Step>
     <Step>
         <Name>AssignMessage.Set429ErrorVariables</Name>
         <Condition>
-                    (fault.name = &quot;SpikeArrestViolation&quot;) or 
-                    (fault.name = &quot;InvalidMessageWeight&quot;) or 
-                    (fault.name = &quot;ErrorLoadingProperties&quot;) or 
-                    (fault.name = &quot;InvalidAllowedRate&quot;) or 
-                    (fault.name = &quot;FailedToResolveSpikeArrestRate&quot;)
+                    (fault.name = "SpikeArrestViolation") or 
+                    (fault.name = "InvalidMessageWeight") or 
+                    (fault.name = "ErrorLoadingProperties") or 
+                    (fault.name = "InvalidAllowedRate") or 
+                    (fault.name = "FailedToResolveSpikeArrestRate")
                 </Condition>
     </Step>
     <Step>
         <Name>AssignMessage.Set429ErrorVariables</Name>
         <Condition>
-                (fault.name = &quot;QuotaViolation&quot;) or 
-                (fault.name = &quot;InvalidMessageWeight&quot;) or 
-                (fault.name = &quot;InvalidQuotaInterval&quot;) or 
-                (fault.name = &quot;FailedToResolveQuota\IntervalReference&quot;) or 
-                (fault.name = &quot;FailedToResolveQuota\IntervalTimeUnitReference&quot;) or 
-                (fault.name = &quot;InvalidQuotaTimeUnit&quot;)
+                (fault.name = "QuotaViolation") or 
+                (fault.name = "InvalidMessageWeight") or 
+                (fault.name = "InvalidQuotaInterval") or 
+                (fault.name = "FailedToResolveQuota\IntervalReference") or 
+                (fault.name = "FailedToResolveQuota\IntervalTimeUnitReference") or 
+                (fault.name = "InvalidQuotaTimeUnit")
             </Condition>
     </Step>
     <Step>
@@ -64,6 +65,6 @@
         <Name>AssignMessage.Set500ErrorVariables</Name>
     </Step>
     <Step>
-        <Name>RaiseFault.DefaultErrorResponse</Name>
+        <Name>AssignMessage.SetDefaultErrorResponse</Name>
     </Step>
 </SharedFlow>

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SharedFlowBundle revision="5" name="SharedFlow_FaultRulesHanding">
+<SharedFlowBundle revision="3" name="SharedFlow_FaultRulesHanding">
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1489515543249</CreatedAt>
-    <CreatedBy>defaultUser</CreatedBy>
+    <CreatedAt>1516573781310</CreatedAt>
+    <CreatedBy>davidmehi@google.com</CreatedBy>
     <Description>Shared method for handling faults</Description>
     <DisplayName>SharedFlow_FaultRulesHanding</DisplayName>
-    <LastModifiedAt>1489515543249</LastModifiedAt>
-    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <LastModifiedAt>1554215960522</LastModifiedAt>
+    <LastModifiedBy>davidmehi@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:59fffae731b00c4faac7f14ccea82a9674e463ec89e153624d949752810e2c4bd7b9f121c4a4487a1a59bb258c1ebd6d4a7dd0603d276f9fbf64191eebb323fe</ManifestVersion>
     <Policies>
         <Policy>AssignMessage.Set400ErrorVariables</Policy>
         <Policy>AssignMessage.Set401ErrorVariables</Policy>
         <Policy>AssignMessage.Set404ErrorVariables</Policy>
         <Policy>AssignMessage.Set429ErrorVariables</Policy>
         <Policy>AssignMessage.Set500ErrorVariables</Policy>
+        <Policy>AssignMessage.SetDefaultErrorResponse</Policy>
         <Policy>JavaScriptDebugVariables</Policy>
-        <Policy>RaiseFault.DefaultDetailedErrorResponse</Policy>
         <Policy>RaiseFault.DefaultErrorResponse</Policy>
     </Policies>
     <Resources>
         <Resource>jsc://JavaScript.DebugVariables.js</Resource>
     </Resources>
-    <Spec></Spec>
+    <Spec/>
     <subType>SharedFlow</subType>
     <SharedFlows>
         <SharedFlow>default</SharedFlow>

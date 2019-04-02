@@ -43,11 +43,6 @@
         </Response>
     </PostFlow>
     <FaultRules>
-        <FaultRule name="Shared Fault Rules">
-            <Step>
-                <Name>FlowCalloutFaultRulesHandling</Name>
-            </Step>
-        </FaultRule>
         <!-- could put additional fault rules here if needed -->
     </FaultRules>
     <DefaultFaultRule name="all">

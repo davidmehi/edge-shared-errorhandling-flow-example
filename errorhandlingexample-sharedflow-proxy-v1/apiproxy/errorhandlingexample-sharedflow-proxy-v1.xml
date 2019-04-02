@@ -2,15 +2,17 @@
 <APIProxy revision="1" name="errorhandlingexample-sharedflow-proxy-v1">
     <Basepaths>/example-shared-proxy</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1489513036270</CreatedAt>
-    <CreatedBy></CreatedBy>
-    <Description></Description>
+    <CreatedAt>1554223706190</CreatedAt>
+    <CreatedBy>davidmehi@google.com</CreatedBy>
+    <Description/>
     <DisplayName>Example-Shared-Proxy</DisplayName>
-    <LastModifiedAt>1489513056707</LastModifiedAt>
-    <LastModifiedBy></LastModifiedBy>
+    <LastModifiedAt>1554223706190</LastModifiedAt>
+    <LastModifiedBy>davidmehi@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:4c8f31b19f79e72c13c65e118e798d18725dbde3afd00c9a619fdd9759a9426c67aac8868a99a5f88d7876a4c45a51a5c307928894dc398a952f7527086da320</ManifestVersion>
     <Policies>
         <Policy>AssignMessageSetResponse</Policy>
         <Policy>FlowCalloutFaultRulesHandling</Policy>
+        <Policy>FlowCalloutSharedSecurityCheck</Policy>
         <Policy>JavaScriptDebug</Policy>
         <Policy>SpikeArrest</Policy>
         <Policy>VerifyAPIKey</Policy>
@@ -21,8 +23,9 @@
     <Resources>
         <Resource>jsc://JavaScript.Debug.js</Resource>
     </Resources>
-    <Spec></Spec>
+    <Spec/>
     <TargetServers/>
-    <TargetEndpoints/>
-    <validate>false</validate>
+    <TargetEndpoints>
+        <TargetEndpoint>TargetEndpoint-1</TargetEndpoint>
+    </TargetEndpoints>
 </APIProxy>

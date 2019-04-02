@@ -4,7 +4,7 @@
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1489515609371</CreatedAt>
     <CreatedBy>defaultUser</CreatedBy>
-    <Description>Proxy template with best practices built in.  Copy and customize.  See confluence page for more details.  https://confluence.allstate.com/display/DX/Proxy+Template</Description>
+    <Description>Proxy template with best practices built in.  Copy and customize.  </Description>
     <DisplayName>template-proxy-v1</DisplayName>
     <LastModifiedAt>1489515609371</LastModifiedAt>
     <LastModifiedBy>defaultUser</LastModifiedBy>

@@ -1,7 +1,7 @@
 # edge-shared-errorhandling-flow-example
 Details how to use shared flows for establishing a common error handling routine for all proxies.
 
-**Shared Flow**
+**Shared Flows**
 1. Zip the "sharedflowbundle" folder
 2. Upload as a Shared Flow (APIs-->Shared Flows)
 3. Deploy to environment needed
@@ -21,15 +21,10 @@ Details how to use shared flows for establishing a common error handling routine
 
 *To use the Shared Flow in a proxy:*
 1. Add the shared flow "SharedFlow_FaultRulesHanding" using the Shared Flow policy to the proxy.
-2. Add the policy to the &lt;FaultRules&gt; and the &lt;DefaultFaultRule&gt; in the default.xml of the proxy.  In both cases, the shared flow will be called, which contains the common error handling logic.
+2. Add the policy to the &lt;DefaultFaultRule&gt; in the default.xml of the proxy.  Since the <AlwaysEnforce> is set to true, this will always execute if there is a fault.  When a fault occurs, the shared flow will be called, which contains the common error handling logic.
 
 ```xml
     <FaultRules>
-        <FaultRule name="Shared Fault Rules">
-            <Step>
-                <Name>FlowCalloutFaultRulesHandling</Name>
-            </Step>
-        </FaultRule>
         <!-- could put additional fault rules here if needed -->
     </FaultRules>
     <DefaultFaultRule name="all">
@@ -40,5 +35,15 @@ Details how to use shared flows for establishing a common error handling routine
     </DefaultFaultRule>
 ```
 
+Always try to keep the original fault of the policy that fails and not override it with another RaiseFault.  Using a second RaiseFault will override the original variables and throw off the analytics, security dashboard and the API Monitoring dashboard.  See this link for more information: <https://docs.apigee.com/api-platform/antipatterns/raise-fault-conditions>
+
+There is no fault handling directly in the shared flow.  Any faults that occur will be raised and flow directed back to the proxy that referenced it.  More information on fault handling in shared flows: <https://docs.apigee.com/api-platform/fundamentals/shared-flows?hl=en#developing-a-shared-flow>
+
+More information on fault handling: <https://docs.apigee.com/api-platform/fundamentals/fault-handling>
+
+
+*Add New Error Handling Conditions*
+
+Add new error handling conditions in the "SharedFlow_FaultRulesHandling" shared flow.  This can be done using the fault.name variable or the [prefix].[policy_name].failed variable.  See this link for more information: <https://docs.apigee.com/api-platform/fundamentals/what-you-need-know-about-policy-errors.html>
 
 
